@@ -20,12 +20,7 @@ RPROMPT_NOBAT='%(?..%{$fg_bold[red]%}(%?%)) %{$reset_color%}%{$DATE_COLOR%}%D{%F
 if [[ `uname` = Darwin ]]; then
 	# hide user@host when running on darwin/local
 	PROMPT=$MAIN_PROMPT
-	if [[ -x $BAT_CHARGE ]]; then
-		# show a battery charge indicator when on os x when the battery script can be found
-		RPROMPT=$RPROMPT_BAT
-	else
-		RPROMPT=$RPROMPT_NOBAT
-	fi
+	RPROMPT=$RPROMPT_NOBAT
 else 
 	PROMPT="$USER_HOME $MAIN_PROMPT"
 	RPROMPT=$RPROMPT_NOBAT
